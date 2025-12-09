@@ -1,0 +1,1239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="TaskNexus - A modern, cross-platform task management app built with React Native, Expo, and TypeScript"
+    />
+    <meta
+      name="keywords"
+      content="TaskNexus, Task Manager, React Native, Expo, TypeScript, Mobile App, Productivity, Todo List"
+    />
+    <meta name="author" content="Son Nguyen" />
+    <title>TaskNexus - Modern Task Management</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📋</text></svg>"
+    />
+
+    <link rel="stylesheet" href="packages/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="container" style="border: none">
+        <div class="nav-brand">
+          <span class="brand-name">TaskNexus</span>
+        </div>
+        <div class="nav-center">
+          <ul class="nav-links" id="navLinks">
+            <li>
+              <a href="#overview"><span>Overview</span></a>
+            </li>
+            <li>
+              <a href="#features"><span>Features</span></a>
+            </li>
+            <li>
+              <a href="#architecture"><span>Architecture</span></a>
+            </li>
+            <li>
+              <a href="#screenshots"><span>Gallery</span></a>
+            </li>
+            <li>
+              <a href="#tech-stack"><span>Tech Stack</span></a>
+            </li>
+            <li>
+              <a href="#installation"><span>Installation</span></a>
+            </li>
+            <li>
+              <a href="#documentation"><span>Documentation</span></a>
+            </li>
+            <li>
+              <a href="#contact"><span>Contact</span></a>
+            </li>
+          </ul>
+        </div>
+        <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-particles"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="gradient-text">TaskNexus</span>
+          </h1>
+          <p class="hero-subtitle">
+            Your Central Hub for Task Management Excellence
+          </p>
+          <p class="hero-description">
+            A modern, cross-platform task management application built with
+            React Native, Expo, and TypeScript. Manage your daily tasks
+            efficiently with real-time synchronization, beautiful charts, and
+            intuitive UI.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">Cross-Platform</span>
+              <span class="stat-label">iOS, Android & Web</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">Real-time</span>
+              <span class="stat-label">Cloud Sync</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">TypeScript</span>
+            </div>
+          </div>
+          <div class="hero-buttons">
+            <a href="#installation" class="btn btn-primary">Get Started</a>
+            <a
+              href="https://github.com/hoangsonww/Task-Manager-ReactNative"
+              target="_blank"
+              class="btn btn-secondary"
+            >
+              <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+      <div class="container">
+        <h2 class="section-title">Overview</h2>
+        <div class="section-intro">
+          <p>
+            TaskNexus is a comprehensive task management solution designed for
+            modern users who need reliable, efficient, and beautiful task
+            tracking across all their devices. Built with cutting-edge
+            technologies and best practices, it offers a seamless experience
+            whether you're on iOS, Android, or the web.
+          </p>
+        </div>
+
+        <div class="overview-grid">
+          <div class="overview-card">
+            <div class="card-icon">🎯</div>
+            <h3>Purpose-Built</h3>
+            <p>
+              Designed specifically for efficient task management with an
+              intuitive interface that gets out of your way.
+            </p>
+          </div>
+          <div class="overview-card">
+            <div class="card-icon">⚡</div>
+            <h3>Lightning Fast</h3>
+            <p>
+              Optimized performance with real-time updates and smooth animations
+              throughout the app.
+            </p>
+          </div>
+          <div class="overview-card">
+            <div class="card-icon">🔒</div>
+            <h3>Secure & Private</h3>
+            <p>
+              Your data is protected with Supabase authentication and row-level
+              security policies.
+            </p>
+          </div>
+          <div class="overview-card">
+            <div class="card-icon">📊</div>
+            <h3>Visual Analytics</h3>
+            <p>
+              Beautiful charts and statistics to help you understand your
+              productivity patterns.
+            </p>
+          </div>
+        </div>
+
+        <div class="branding-section">
+          <h3 class="subsection-title">Why TaskNexus?</h3>
+          <p>
+            The name "TaskNexus" reflects the app's core purpose – serving as a
+            central hub (nexus) for all your tasks. It conveys a sense of
+            connectivity and organization, bringing together tasks from
+            different aspects of your life into one unified, powerful platform.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Key Features</h2>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📝</div>
+            <h3>Task Management</h3>
+            <ul class="feature-list">
+              <li>Add, update, and delete tasks effortlessly</li>
+              <li>Drag-and-drop reordering with smooth animations</li>
+              <li>Mark tasks as complete/incomplete with a tap</li>
+              <li>Color-coded tasks for easy categorization</li>
+              <li>Due date and time tracking</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">☁️</div>
+            <h3>Cloud Synchronization</h3>
+            <ul class="feature-list">
+              <li>Real-time sync across all devices</li>
+              <li>Supabase-powered backend</li>
+              <li>WebSocket-based live updates</li>
+              <li>Automatic conflict resolution</li>
+              <li>Manual refresh capability</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Statistics & Charts</h3>
+            <ul class="feature-list">
+              <li>Pie chart for completion ratios</li>
+              <li>Bar chart for overdue vs. upcoming tasks</li>
+              <li>Line chart for tasks over time</li>
+              <li>Theme-adaptive transparent charts</li>
+              <li>Real-time chart updates</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🎨</div>
+            <h3>Theming & UI</h3>
+            <ul class="feature-list">
+              <li>Dark and light mode support</li>
+              <li>Smooth theme transitions (200ms)</li>
+              <li>System theme auto-detection</li>
+              <li>Material Design components</li>
+              <li>Custom bottom tab bar</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🔐</div>
+            <h3>Authentication</h3>
+            <ul class="feature-list">
+              <li>Secure user registration and login</li>
+              <li>Supabase authentication integration</li>
+              <li>Row-level security policies</li>
+              <li>Session management</li>
+              <li>Password encryption</li>
+            </ul>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>Performance</h3>
+            <ul class="feature-list">
+              <li>Optimized React Native components</li>
+              <li>Efficient state management with Context API</li>
+              <li>Smooth 60 FPS animations</li>
+              <li>Lazy loading and code splitting</li>
+              <li>Minimal bundle size</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="section">
+      <div class="container">
+        <h2 class="section-title">System Architecture</h2>
+
+        <div class="architecture-intro">
+          <p>
+            TaskNexus follows a modern, scalable architecture pattern with clear
+            separation of concerns. The application is built using React Native
+            with Expo, leveraging TypeScript for type safety and Supabase for
+            backend services.
+          </p>
+        </div>
+
+        <div class="mermaid-container">
+          <div class="mermaid">
+graph TB
+    subgraph "Client Layer"
+        A[Mobile App - iOS/Android]
+        B[Web App]
+        C[React Native Components]
+    end
+    subgraph "Application Layer"
+        D[Expo Router]
+        E[Context API State Management]
+        F[Task Context]
+        G[Theme Context]
+    end
+    subgraph "UI Components"
+        H[Home Screen]
+        I[Stats Screen]
+        J[Auth Screens]
+        K[Custom Tab Bar]
+        L[Chart Components]
+    end
+    subgraph "Backend Services"
+        M[Supabase Client]
+        N[Authentication Service]
+        O[Real-time Subscriptions]
+        P[PostgreSQL Database]
+    end
+    subgraph "Data Layer"
+        Q[Tasks Table]
+        R[Users Table]
+        S[Row Level Security]
+    end
+    A --> C
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    E --> G
+    F --> H
+    F --> I
+    G --> K
+    H --> M
+    I --> M
+    J --> N
+    M --> O
+    M --> N
+    N --> P
+    O --> P
+    P --> Q
+    P --> R
+    P --> S
+    style A fill:#4CAF50
+    style B fill:#4CAF50
+    style M fill:#3ECF8E
+    style P fill:#336791
+    style E fill:#61DAFB
+          </div>
+        </div>
+
+        <div class="architecture-details">
+          <div class="arch-card">
+            <h3>Component Architecture</h3>
+            <div class="mermaid">
+graph LR
+    A[App Root] --> B[Layout]
+    B --> C[Theme Provider]
+    B --> D[Task Provider]
+    C --> E[Navigation]
+    D --> E
+    E --> F[Tab Screens]
+    F --> G[Home]
+    F --> H[Stats]
+    F --> I[Auth]
+    style A fill:#FF6B6B
+    style B fill:#4ECDC4
+    style C fill:#45B7D1
+    style D fill:#FFA07A
+    style E fill:#98D8C8
+            </div>
+          </div>
+
+          <div class="arch-card">
+            <h3>Data Flow</h3>
+            <div class="mermaid">
+sequenceDiagram
+    participant U as User
+    participant C as Component
+    participant Ctx as Context
+    participant S as Supabase
+    participant DB as Database
+    U->>C: Interact (Add Task)
+    C->>Ctx: Update State
+    Ctx->>S: API Call
+    S->>DB: Insert Data
+    DB->>S: Confirm
+    S->>Ctx: Real-time Update
+    Ctx->>C: Re-render
+    C->>U: UI Update
+            </div>
+          </div>
+        </div>
+
+        <div class="file-structure">
+          <h3 class="subsection-title">Project Structure</h3>
+          <pre><code>Task-Manager-ReactNative/
+├── 📱 app/                    # Expo Router screens
+│   ├── _layout.tsx           # Root layout with providers
+│   ├── index.tsx             # Flash/Splash screen
+│   └── (tabs)/               # Tab-based navigation
+│       ├── home.tsx          # Task management screen
+│       ├── stats.tsx         # Analytics screen
+│       ├── login.tsx         # Authentication screen
+│       └── register.tsx      # Registration screen
+├── 🎨 components/            # Reusable components
+│   ├── Chart.tsx            # Chart visualizations
+│   ├── CustomTabBar.tsx     # Custom tab bar with theme toggle
+│   ├── TaskAddModal.tsx     # Task creation modal
+│   └── TaskItem.tsx         # Individual task component
+├── 🎯 contexts/              # Global state management
+│   ├── TaskContext.tsx      # Task state & operations
+│   └── ThemeOverrideContext.tsx  # Theme management
+├── 🔧 lib/                   # Utilities & configuration
+│   └── supabaseClient.ts    # Supabase initialization
+├── 💅 styles/                # Component styles
+│   ├── HomeScreenStyles.ts
+│   ├── StatsScreenStyles.ts
+│   └── ...
+├── 🎭 constants/             # App constants
+│   └── Colors.ts            # Theme colors
+├── 🪝 hooks/                 # Custom React hooks
+│   └── usePrevious.ts       # Previous state hook
+├── 📦 types/                 # TypeScript definitions
+│   └── types.ts             # Shared types
+├── 🗄️ supabase/              # Database schema
+│   └── db.sql               # PostgreSQL schema
+├── 🧪 __tests__/             # Test files
+├── 🐳 Dockerfile             # Container configuration
+└── 📝 README.md              # Documentation</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots Gallery -->
+    <section id="screenshots" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">App Gallery</h2>
+
+        <div class="platform-section">
+          <h3 class="subsection-title">
+            <span class="platform-icon">📱</span> iOS Platform
+          </h3>
+          <div class="screenshot-grid">
+            <div class="screenshot-item">
+              <img
+                src="img/Flash-IP.png"
+                alt="iOS Flash Screen"
+                loading="lazy"
+              />
+              <p class="screenshot-caption">Flash Screen</p>
+            </div>
+            <div class="screenshot-item">
+              <img src="img/Home-IP.png" alt="iOS Home Light" loading="lazy" />
+              <p class="screenshot-caption">Home - Light Mode</p>
+            </div>
+            <div class="screenshot-item">
+              <img
+                src="img/Stats-IP.png"
+                alt="iOS Stats Light"
+                loading="lazy"
+              />
+              <p class="screenshot-caption">Stats - Light Mode</p>
+            </div>
+            <div class="screenshot-item">
+              <img
+                src="img/HomeDark-IP.png"
+                alt="iOS Home Dark"
+                loading="lazy"
+              />
+              <p class="screenshot-caption">Home - Dark Mode</p>
+            </div>
+            <div class="screenshot-item">
+              <img
+                src="img/StatsDark-IP.png"
+                alt="iOS Stats Dark"
+                loading="lazy"
+              />
+              <p class="screenshot-caption">Stats - Dark Mode</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="platform-section">
+          <h3 class="subsection-title">
+            <span class="platform-icon">🤖</span> Android Platform
+          </h3>
+          <div class="screenshot-grid">
+            <div class="screenshot-item">
+              <img
+                src="img/Flash-Android.png"
+                alt="Android Flash Screen"
+                loading="lazy"
+              />
+              <p class="screenshot-caption">Flash Screen</p>
+            </div>
+            <div class="screenshot-item">
+              <img
+                src="img/Home-Android.png"
+                alt="Android Home Light"
+                loading="lazy"
+              />
+              <p class="screenshot-caption">Home - Light Mode</p>
+            </div>
+            <div class="screenshot-item">
+              <img
+                src="img/Stats-Android.png"
+                alt="Android Stats Light"
+                loading="lazy"
+              />
+              <p class="screenshot-caption">Stats - Light Mode</p>
+            </div>
+            <div class="screenshot-item">
+              <img
+                src="img/HomeDark-Android.png"
+                alt="Android Home Dark"
+                loading="lazy"
+              />
+              <p class="screenshot-caption">Home - Dark Mode</p>
+            </div>
+            <div class="screenshot-item">
+              <img
+                src="img/StatsDark-Android.png"
+                alt="Android Stats Dark"
+                loading="lazy"
+              />
+              <p class="screenshot-caption">Stats - Dark Mode</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="platform-section">
+          <h3 class="subsection-title">
+            <span class="platform-icon">🌐</span> Web Platform
+          </h3>
+          <div class="screenshot-grid web-grid">
+            <div class="screenshot-item">
+              <img src="img/HomeWeb.png" alt="Web Home Light" loading="lazy" />
+              <p class="screenshot-caption">Home - Light Mode</p>
+            </div>
+            <div class="screenshot-item">
+              <img
+                src="img/StatsWeb.png"
+                alt="Web Stats Light"
+                loading="lazy"
+              />
+              <p class="screenshot-caption">Stats - Light Mode</p>
+            </div>
+            <div class="screenshot-item">
+              <img
+                src="img/HomeDarkWeb.png"
+                alt="Web Home Dark"
+                loading="lazy"
+              />
+              <p class="screenshot-caption">Home - Dark Mode</p>
+            </div>
+            <div class="screenshot-item">
+              <img
+                src="img/StatsDarkWeb.png"
+                alt="Web Stats Dark"
+                loading="lazy"
+              />
+              <p class="screenshot-caption">Stats - Dark Mode</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="platform-section">
+          <h3 class="subsection-title">
+            <span class="platform-icon">✨</span> Interactive Demos
+          </h3>
+          <div class="demo-grid">
+            <div class="demo-item">
+              <img src="img/ios.gif" alt="iOS Demo" loading="lazy" />
+              <p class="screenshot-caption">iOS User Experience</p>
+            </div>
+            <div class="demo-item">
+              <img src="img/android.gif" alt="Android Demo" loading="lazy" />
+              <p class="screenshot-caption">Android User Experience</p>
+            </div>
+          </div>
+          <div class="demo-item-full">
+            <img src="img/sync.gif" alt="Real-time Sync Demo" loading="lazy" />
+            <p class="screenshot-caption">
+              Real-time Synchronization Across Devices
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-note">
+          <p>
+            <strong>Note:</strong> The GIFs and images may not fully represent
+            the app's current state, as they were captured during development.
+            The app has since been enhanced with new features and improvements.
+            Clone the repository to experience the latest version!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="tech-stack" class="section">
+      <div class="container">
+        <h2 class="section-title">Technology Stack</h2>
+
+        <div class="tech-category">
+          <h3 class="tech-category-title">Core Technologies</h3>
+          <div class="tech-grid">
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/React_Native-red?style=for-the-badge&logo=react&logoColor=white"
+                alt="React Native"
+              />
+            </div>
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white"
+                alt="Expo"
+              />
+            </div>
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"
+                alt="TypeScript"
+              />
+            </div>
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"
+                alt="Node.js"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h3 class="tech-category-title">Backend & Database</h3>
+          <div class="tech-grid">
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white"
+                alt="Supabase"
+              />
+            </div>
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white"
+                alt="PostgreSQL"
+              />
+            </div>
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/WebSockets-4A90E2?style=for-the-badge&logo=socketdotio&logoColor=white"
+                alt="WebSockets"
+              />
+            </div>
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby&logoColor=white"
+                alt="Ruby on Rails"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h3 class="tech-category-title">UI & Charts</h3>
+          <div class="tech-grid">
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/React_Native_Paper-6200EE?style=for-the-badge&logo=react&logoColor=white"
+                alt="React Native Paper"
+              />
+            </div>
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/Chart_Kit-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white"
+                alt="Chart Kit"
+              />
+            </div>
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/React_Native_Vector_Icons-purple?style=for-the-badge&logo=react&logoColor=white"
+                alt="Vector Icons"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h3 class="tech-category-title">DevOps & Deployment</h3>
+          <div class="tech-grid">
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"
+                alt="Docker"
+              />
+            </div>
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white"
+                alt="GitHub Actions"
+              />
+            </div>
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/Amazon_Web_Services-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white"
+                alt="AWS"
+              />
+            </div>
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"
+                alt="Vercel"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h3 class="tech-category-title">Testing & Quality</h3>
+          <div class="tech-grid">
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white"
+                alt="Jest"
+              />
+            </div>
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/React_Testing_Library-FF4785?style=for-the-badge&logo=testinglibrary&logoColor=white"
+                alt="Testing Library"
+              />
+            </div>
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white"
+                alt="ESLint"
+              />
+            </div>
+            <div class="tech-badge">
+              <img
+                src="https://img.shields.io/badge/Prettier-pink?style=for-the-badge&logo=prettier&logoColor=white"
+                alt="Prettier"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-details">
+          <div class="tech-detail-card">
+            <h4>State Management</h4>
+            <p>
+              React Context API for global state management with TaskContext and
+              ThemeContext providers
+            </p>
+          </div>
+          <div class="tech-detail-card">
+            <h4>Navigation</h4>
+            <p>
+              Expo Router for file-based routing with nested layouts and tab
+              navigation
+            </p>
+          </div>
+          <div class="tech-detail-card">
+            <h4>Animations</h4>
+            <p>
+              React Native Reanimated for smooth 60 FPS animations and gesture
+              handling
+            </p>
+          </div>
+          <div class="tech-detail-card">
+            <h4>Real-time Updates</h4>
+            <p>
+              Supabase real-time subscriptions for instant synchronization
+              across devices
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Installation & Setup</h2>
+
+        <div class="install-steps">
+          <div class="install-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Prerequisites</h3>
+              <ul>
+                <li><strong>Node.js</strong> version 14 or above</li>
+                <li>
+                  <strong>npm</strong> or <strong>Yarn</strong> package manager
+                </li>
+                <li><strong>Expo CLI</strong> (install globally)</li>
+                <li>Android/iOS Emulator or Physical Device</li>
+                <li><strong>Supabase Account</strong> for cloud sync</li>
+              </ul>
+              <div class="code-block">
+                <pre><code># Install Expo CLI globally
+npm install -g expo-cli</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="install-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Clone the Repository</h3>
+              <div class="code-block">
+                <pre><code>git clone https://github.com/hoangsonww/Task-Manager-ReactNative.git
+cd Task-Manager-ReactNative</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="install-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Install Dependencies</h3>
+              <div class="code-block">
+                <pre><code># Using npm
+npm install
+
+# Or using Yarn
+yarn install</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="install-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Configure Environment</h3>
+              <p>
+                Create a <code>.env</code> file in the root directory with your
+                Supabase credentials:
+              </p>
+              <div class="code-block">
+                <pre><code>EXPO_PUBLIC_SUPABASE_URL=your_supabase_url
+EXPO_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="install-step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h3>Set Up Database</h3>
+              <p>
+                Run the SQL schema from <code>supabase/db.sql</code> in your
+                Supabase project:
+              </p>
+              <div class="code-block">
+                <pre><code>-- Creates tasks table with row-level security
+-- Run this in your Supabase SQL editor</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="install-step">
+            <div class="step-number">6</div>
+            <div class="step-content">
+              <h3>Run the App</h3>
+              <div class="code-block">
+                <pre><code># Start the Expo development server
+npm start
+
+# Or use Expo CLI directly
+npx expo start
+
+# Clear cache if needed
+npx expo start -c</code></pre>
+              </div>
+              <p class="step-note">
+                Press <kbd>a</kbd> for Android, <kbd>i</kbd> for iOS, or
+                <kbd>w</kbd> for Web
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="install-notes">
+          <div class="note-card note-tip">
+            <h4>💡 Pro Tip</h4>
+            <p>
+              Use the shell scripts in the <code>shell/</code> directory for
+              common tasks:
+            </p>
+            <ul>
+              <li><code>./shell/start.sh</code> - Start the app</li>
+              <li><code>./shell/format.sh</code> - Format code</li>
+              <li><code>./shell/reset.sh</code> - Reset project state</li>
+            </ul>
+          </div>
+          <div class="note-card note-warning">
+            <h4>⚠️ Important</h4>
+            <p>
+              The web version may not display correctly on larger screens and
+              some features like drag-and-drop may have limited functionality on
+              web.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="documentation" class="section">
+      <div class="container">
+        <h2 class="section-title">Documentation</h2>
+
+        <div class="doc-grid">
+          <div class="doc-card">
+            <h3>📚 Usage Guide</h3>
+            <ul>
+              <li>
+                <strong>Authentication:</strong> Register or login to access
+                your tasks
+              </li>
+              <li>
+                <strong>Add Tasks:</strong> Tap the "Add Task" button to create
+                new tasks
+              </li>
+              <li>
+                <strong>Reorder:</strong> Drag and drop tasks to adjust their
+                order
+              </li>
+              <li>
+                <strong>Complete:</strong> Tap the checkbox to mark tasks as
+                done
+              </li>
+              <li><strong>Statistics:</strong> View charts in the Stats tab</li>
+              <li>
+                <strong>Theme:</strong> Toggle dark/light mode from the tab bar
+              </li>
+            </ul>
+          </div>
+
+          <div class="doc-card">
+            <h3>🧪 Testing</h3>
+            <div class="code-block">
+              <pre><code># Run all tests
+npm test
+
+# Watch mode
+npm run test:watch
+
+# Coverage report
+npm run test:coverage</code></pre>
+            </div>
+            <p>
+              Tests are located in the <code>__tests__/</code> directory using
+              Jest and React Testing Library.
+            </p>
+          </div>
+
+          <div class="doc-card">
+            <h3>🐳 Docker Support</h3>
+            <div class="code-block">
+              <pre><code># Build and run with Docker Compose
+docker-compose up --build
+
+# Stop containers
+docker-compose down</code></pre>
+            </div>
+            <p>
+              Note: Docker setup is optimized for the web version of the app.
+            </p>
+          </div>
+
+          <div class="doc-card">
+            <h3>📊 Database Schema</h3>
+            <div class="schema-table">
+              <h4>Tasks Table</h4>
+              <table>
+                <tr>
+                  <th>Column</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+                <tr>
+                  <td>id</td>
+                  <td>UUID</td>
+                  <td>Primary key</td>
+                </tr>
+                <tr>
+                  <td>user_id</td>
+                  <td>UUID</td>
+                  <td>Foreign key to auth.users</td>
+                </tr>
+                <tr>
+                  <td>text</td>
+                  <td>Text</td>
+                  <td>Task description</td>
+                </tr>
+                <tr>
+                  <td>color</td>
+                  <td>Text</td>
+                  <td>Task color</td>
+                </tr>
+                <tr>
+                  <td>due_date</td>
+                  <td>Timestamp</td>
+                  <td>Due date and time</td>
+                </tr>
+                <tr>
+                  <td>completed</td>
+                  <td>Boolean</td>
+                  <td>Completion status</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="api-section">
+          <h3 class="subsection-title">Available Scripts</h3>
+          <div class="scripts-grid">
+            <div class="script-item">
+              <code>npm start</code>
+              <p>Start the Expo development server</p>
+            </div>
+            <div class="script-item">
+              <code>npm run android</code>
+              <p>Start on Android emulator</p>
+            </div>
+            <div class="script-item">
+              <code>npm run ios</code>
+              <p>Start on iOS simulator</p>
+            </div>
+            <div class="script-item">
+              <code>npm run web</code>
+              <p>Start on web browser</p>
+            </div>
+            <div class="script-item">
+              <code>npm run format</code>
+              <p>Format code with Prettier</p>
+            </div>
+            <div class="script-item">
+              <code>npm test</code>
+              <p>Run test suite</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Contact & Support</h2>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-icon">👨‍💻</div>
+            <h3>Developer</h3>
+            <p class="contact-name">Son Nguyen</p>
+            <a
+              href="https://sonnguyenhoang.com"
+              target="_blank"
+              class="contact-link"
+              >sonnguyenhoang.com</a
+            >
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">📧</div>
+            <h3>Email</h3>
+            <a href="mailto:hoangson091104@gmail.com" class="contact-link"
+              >hoangson091104@gmail.com</a
+            >
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="48"
+                height="48"
+              >
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+            </div>
+            <h3>GitHub</h3>
+            <a
+              href="https://github.com/hoangsonww"
+              target="_blank"
+              class="contact-link"
+              >@hoangsonww</a
+            >
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                width="48"
+                height="48"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </div>
+            <h3>LinkedIn</h3>
+            <a
+              href="https://www.linkedin.com/in/hoangsonw/"
+              target="_blank"
+              class="contact-link"
+              >Son Nguyen</a
+            >
+          </div>
+        </div>
+
+        <div class="contribute-section">
+          <h3>🤝 Contribute</h3>
+          <p>
+            TaskNexus is open source and welcomes contributions! Feel free to:
+          </p>
+          <ul>
+            <li>
+              Report bugs or request features via
+              <a
+                href="https://github.com/hoangsonww/Task-Manager-ReactNative/issues"
+                target="_blank"
+                >GitHub Issues</a
+              >
+            </li>
+            <li>Submit pull requests to improve the codebase</li>
+            <li>Share feedback and suggestions</li>
+            <li>Star the repository if you find it useful!</li>
+          </ul>
+        </div>
+
+        <div class="license-section">
+          <h3>📄 License</h3>
+          <p>
+            This project is licensed under the <strong>MIT License</strong>. See
+            the
+            <a
+              href="https://github.com/hoangsonww/Task-Manager-ReactNative/blob/main/LICENSE"
+              target="_blank"
+              >LICENSE</a
+            >
+            file for details.
+          </p>
+          <p class="license-notice">
+            <strong>Note:</strong> This project is for educational purposes.
+            Please credit the original author when using any part of this code.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <h2 class="footer-brand-name"><span class="gradient-text">TaskNexus</span></h2>
+            <p class="footer-tagline">Your Central Hub for Task Management</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>Project</h4>
+              <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li>
+                  <a
+                    href="https://github.com/hoangsonww/Task-Manager-ReactNative"
+                    target="_blank"
+                    >GitHub</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#tech-stack">Tech Stack</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#documentation">Documentation</a></li>
+                <li>
+                  <a
+                    href="https://github.com/hoangsonww/Task-Manager-ReactNative/blob/main/LICENSE"
+                    target="_blank"
+                    >License</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>Connect</h4>
+              <ul>
+                <li>
+                  <a href="https://github.com/hoangsonww" target="_blank"
+                    >GitHub</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/hoangsonw/"
+                    target="_blank"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li><a href="mailto:hoangson091104@gmail.com">Email</a></li>
+                <li>
+                  <a href="https://sonnguyenhoang.com" target="_blank"
+                    >Website</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 TaskNexus. Created by
+            <a href="https://sonnguyenhoang.com" target="_blank">Son Nguyen</a>.
+            All rights reserved.
+          </p>
+          <p class="footer-note">
+            Built with ❤️ using React Native, Expo, and TypeScript
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+
+    <script src="packages/script.js"></script>
+  </body>
+</html>
